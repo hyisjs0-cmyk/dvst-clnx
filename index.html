@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DEVERSANT clnx</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">DEVERSANT clnx</div>
+  </header>
+
+  <main id="mainPage" class="page active">
+    <h1>ДЕФОЛТ КАПТОВ</h1>
+
+    <div class="cards">
+      <div class="card" onclick="openMap('МИРОР')">МИРОР</div>
+      <div class="card" onclick="openMap('ВЕТРЯКИ')">ВЕТРЯКИ</div>
+      <div class="card" onclick="openMap('Завод')">Завод</div>
+      <div class="card" onclick="openMap('КЕЙШОП')">КЕЙШОП</div>
+      <div class="card" onclick="openMap('РОКФОРД')">РОКФОРД</div>
+      <div class="card" onclick="openMap('ЦЕРКОВЬ')">ЦЕРКОВЬ</div>
+      <div class="card" onclick="openMap('ПИРС')">ПИРС</div>
+      <div class="card" onclick="openMap('БИЗВАР')">БИЗВАР</div>
+      <div class="card" onclick="openMap('СЭНДИК')">СЭНДИК</div>
+      <div class="card" onclick="openMap('ПАЛЕТТО БЭЙ')">ПАЛЕТТО БЭЙ</div>
+      <div class="card" onclick="openMap('ЯКИ')">ЯКИ</div>
+      <div class="card" onclick="openMap('ПОРТ')">ПОРТ</div>
+      <div class="card" onclick="openMap('ФЕРМА')">ФЕРМА</div>
+    </div>
+  </main>
+
+  <section id="mapPage" class="page">
+    <button class="back" onclick="goBack()">← Назад</button>
+
+    <h1 id="mapTitle">Название карты</h1>
+
+    <div class="switcher">
+      <button id="defBtn" class="active-switch" onclick="setMode('def')">ДЕФ</button>
+      <button id="attackBtn" onclick="setMode('attack')">АТАКА</button>
+    </div>
+
+    <div class="imageBox">
+      <img id="mapImage" src="" alt="Картинка карты" />
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+
+<a href="https://discord.gg/fPUWY7EZ3" target="_blank" class="discord-btn">
+  <img src="https://cdn-icons-png.flaticon.com/512/5968/5968756.png" alt="Discord">
+</a>
+
+</body>
+</html>
