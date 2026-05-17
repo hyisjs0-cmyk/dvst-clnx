@@ -1,9 +1,13 @@
 let currentMap = "";
 let currentMode = "def";
+let currentImageIndex = 0;
 
 const images = {
   "МИРОР": {
-    def: "DEF/мирор.png",
+    def: [
+      "DEF/мирор.png",
+      "DEF/asasa.png"
+      ],
     attack: "ATAKA/мирор.png"
   },
   "ВЕТРЯКИ": {
@@ -59,6 +63,7 @@ const images = {
 function openMap(mapName) {
   currentMap = mapName;
   currentMode = "def";
+  currentImageIndex = 0;
 
   document.getElementById("mainPage").classList.remove("active");
   document.getElementById("mapPage").classList.add("active");
@@ -75,6 +80,7 @@ function goBack() {
 
 function setMode(mode) {
   currentMode = mode;
+  currentImageIndex = 0;
   updateImage();
   updateButtons();
 }
@@ -83,7 +89,13 @@ function updateImage() {
   const img = document.getElementById("mapImage");
 
   if (images[currentMap]) {
-    img.src = images[currentMap][currentMode];
+    const currentImages = images[currentMap][currentMode];
+
+    if (Array.isArray(currentImages)) {
+      img.src = currentImages[currentImageIndex];
+    } else {
+      img.src = currentImages;
+    }
   }
 }
 
@@ -302,3 +314,30 @@ document.addEventListener("DOMContentLoaded", function () {
     canvas.addEventListener("mouseleave", endDraw);
   }
 });
+function nextImage() {
+  const currentImages = images[currentMap][currentMode];
+
+  if (!Array.isArray(currentImages)) return;
+
+  currentImageIndex++;
+
+  if (currentImageIndex >= currentImages.length) {
+    currentImageIndex = 0;
+  }
+
+  updateImage();
+}
+
+function prevImage() {
+  const currentImages = images[currentMap][currentMode];
+
+  if (!Array.isArray(currentImages)) return;
+
+  currentImageIndex--;
+
+  if (currentImageIndex < 0) {
+    currentImageIndex = currentImages.length - 1;
+  }
+
+  updateImage();
+}
