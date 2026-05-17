@@ -45,10 +45,23 @@
    <div class="imageBox">
   <img id="mapImage" src="" alt="Картинка карты" onclick="openFullscreen()" />
 </div>
-    <div id="fullscreenViewer" class="fullscreen-viewer">
+   <div id="fullscreenViewer" class="fullscreen-viewer">
+  <div class="paint-tools">
+    <button onclick="setTool('pen')">✏️</button>
+    <button onclick="setTool('arrow')">➜</button>
+    <button onclick="undoDraw()">↶</button>
+    <button onclick="clearDraw()">Очистить</button>
+  </div>
+
   <button class="close-viewer" onclick="closeFullscreen()">×</button>
   <button class="zoom-btn" onclick="zoomImage()">＋</button>
   <button class="zoom-out-btn" onclick="zoomOutImage()">－</button>
+
+  <div class="canvas-wrap">
+    <img id="fullscreenImage" src="" alt="Fullscreen image">
+    <canvas id="drawCanvas"></canvas>
+  </div>
+</div>
 
   <img id="fullscreenImage" src="" alt="Fullscreen image">
 </div>
