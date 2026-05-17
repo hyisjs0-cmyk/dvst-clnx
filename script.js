@@ -14,52 +14,124 @@ const images = {
       ]
   },
   "ВЕТРЯКИ": {
-    def: "DEF/ветряки.png",
-    attack: "ATAKA/ветряк.png"
+    def: [
+      "DEF/ветряки.png",
+      "images/ветряки обычка.jpg"
+      ],
+    attack: [
+      "ATAKA/ветряк.png",
+      "images/ветряки обычка.jpg"
+      ]
   },
   "Завод": {
-    def: "DEF/завод.png",
-    attack: "ATAKA/завод.png"
+    def: [
+      "DEF/завод.png",
+      "images/завод обычка.jpg"
+      ],
+    attack: [
+      "ATAKA/завод.png",
+      "images/завод обычка.jpg"
+      ]
   },
   "КЕЙШОП": {
-    def: "DEF/муравы.png",
-    attack: "ATAKA/муравы.png"
+    def: [ 
+      "DEF/муравы.png",
+       "images/кейшоп обычка.jpg"
+      ],
+    attack: [
+      "ATAKA/муравы.png",
+       "images/кейшоп обычка.jpg"
+      ]
   },
   "РОКФОРД": {
-    def: "DEF/рокфорд.png",
-    attack: "ATAKA/рокфорд.png"
+    def: [
+      "DEF/рокфорд.png",
+       "images/дом майкла обычка.jpg"
+      ],
+    attack: [ 
+      "ATAKA/рокфорд.png",
+      "images/дом майкла обычка.jpg"
+      ]
   },
   "ЦЕРКОВЬ": {
-    def: "DEF/церковь.png",
-    attack: "ATAKA/церковь.png"
+    def: [
+      "DEF/церковь.png",
+       "images/церковь обычка.jpg"
+      ],
+    attack: [ 
+      "ATAKA/церковь.png",
+       "images/церковь обычка.jpg"
+      ]
   },
   "ПИРС": {
-    def: "DEF/пирс.png",
-    attack: "ATAKA/пирс.png"
+    def: [ 
+      "DEF/пирс.png",
+       "images/пирс обычка.jpg"
+      ],
+    attack: [
+      "ATAKA/пирс.png",
+      "images/пирс обычка.jpg"
+      ]
   },
   "БИЗВАР": {
-    def: "DEF/ребл.png",
-    attack: "ATAKA/ребл.png"
+    def: [
+      "DEF/ребл.png",
+      "images/бизвар обычка.jpg"
+      ],
+    attack: [
+      "ATAKA/ребл.png",
+       "images/бизвар обычка.jpg"
+      ]  
   },
   "СЭНДИК": {
-    def: "DEF/сендик.png",
-    attack: "ATAKA/сендик.png"
+    def: [
+      "DEF/сендик.png",
+       "images/сендик обычка.jpg"
+      ],
+    attack: [
+      "ATAKA/сендик.png",
+      "images/сендик обычка.jpg"
+      ]
   },
   "ПАЛЕТТО БЭЙ": {
-    def: "DEF/палетка.png",
-    attack: "ATAKA/палето.png"
+    def: [
+      "DEF/палетка.png",
+     "images/палетка обычка.jpg"
+      ],
+    attack: [
+      "ATAKA/палето.png",
+      "images/палетка обычка.jpg"
+      ]
   },
   "ЯКИ": {
-    def: "DEF/яки.png",
-    attack: "ATAKA/яки.png"
+    def: [ 
+      "DEF/яки.png",
+      "images/яки обычка.jpg"
+      ],
+    attack: [
+      "ATAKA/яки.png",
+      "images/яки обычка.jpg"
+      ]
   },
   "ПОРТ": {
-    def: "images/docks-def.jpg",
-    attack: "ATAKA/порт.png"
+    def: [ 
+      "images/docks-def.jpg",
+      "images/порт обычка.jpg"
+      ],
+    attack: [ 
+      "ATAKA/порт.png",
+      "images/порт обычка.jpg"
+      ]
   },
   "ФЕРМА": {
-    def: "images/road-def.jpg",
-    attack: "ATAKA/ферма.png"
+    def: [
+      "images/road-def.jpg",
+      "images/ферма обычка.jpg"
+      ],
+    attack: [ 
+      "ATAKA/ферма.png",
+      "images/ферма обычка.jpg"
+      ]
   }
 };
 
