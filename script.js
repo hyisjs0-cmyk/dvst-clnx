@@ -160,12 +160,18 @@ function setupCanvas() {
   canvas.style.width = img.clientWidth + "px";
   canvas.style.height = img.clientHeight + "px";
 
-ctx.lineWidth = 5;
-ctx.lineCap = "round";
-ctx.lineJoin = "round";
+  // ЧИСТОЕ РИСОВАНИЕ БЕЗ БЛЮРА
+  ctx.lineWidth = 4;
+  ctx.lineCap = "round";
+  ctx.lineJoin = "round";
 
-ctx.strokeStyle = "#ff0000";
-ctx.fillStyle = "#ff0000";
+  ctx.strokeStyle = "red";
+  ctx.fillStyle = "red";
+
+  // ПОЛНОСТЬЮ УБИРАЕМ ТЕНИ
+  ctx.shadowBlur = 0;
+  ctx.shadowColor = "transparent";
+  ctx.filter = "none";
 
   saveCanvasState();
 }
@@ -240,8 +246,11 @@ function endDraw(e) {
 }
 
 function drawArrow(fromX, fromY, toX, toY) {
-  ctx.strokeStyle = "#ff0000";
-  ctx.fillStyle = "#ff0000";
+  ctx.strokeStyle = "red";
+  ctx.fillStyle = "red";
+
+  ctx.shadowBlur = 0;
+  ctx.filter = "none";
 
   const headLength = 18;
   const angle = Math.atan2(toY - fromY, toX - fromX);
