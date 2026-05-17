@@ -167,9 +167,6 @@ ctx.lineJoin = "round";
 ctx.strokeStyle = "#ff0000";
 ctx.fillStyle = "#ff0000";
 
-ctx.shadowBlur = 0;
-ctx.shadowColor = "transparent";
-
   saveCanvasState();
 }
 
