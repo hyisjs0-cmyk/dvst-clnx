@@ -91,3 +91,44 @@ function updateButtons() {
   document.getElementById("defBtn").classList.toggle("active-switch", currentMode === "def");
   document.getElementById("attackBtn").classList.toggle("active-switch", currentMode === "attack");
 }
+let zoomLevel = 1;
+
+function openFullscreen() {
+  const currentImage = document.getElementById("mapImage").src;
+  const fullscreen = document.getElementById("fullscreenViewer");
+  const fullscreenImage = document.getElementById("fullscreenImage");
+
+  zoomLevel = 1;
+  fullscreenImage.style.transform = `scale(${zoomLevel})`;
+  fullscreenImage.src = currentImage;
+
+  fullscreen.classList.add("active");
+}
+
+function closeFullscreen() {
+  document.getElementById("fullscreenViewer").classList.remove("active");
+}
+
+function zoomImage() {
+  const fullscreenImage = document.getElementById("fullscreenImage");
+
+  if (zoomLevel < 3) {
+    zoomLevel += 0.25;
+    fullscreenImage.style.transform = `scale(${zoomLevel})`;
+  }
+}
+
+function zoomOutImage() {
+  const fullscreenImage = document.getElementById("fullscreenImage");
+
+  if (zoomLevel > 1) {
+    zoomLevel -= 0.25;
+    fullscreenImage.style.transform = `scale(${zoomLevel})`;
+  }
+}
+
+document.addEventListener("keydown", function(event) {
+  if (event.key === "Escape") {
+    closeFullscreen();
+  }
+});
