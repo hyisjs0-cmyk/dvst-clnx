@@ -176,3 +176,60 @@ h1 {
   width: 42px;
   height: 42px;
 }
+.imageBox img {
+  cursor: zoom-in;
+}
+
+.fullscreen-viewer {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  overflow: hidden;
+}
+
+.fullscreen-viewer.active {
+  display: flex;
+}
+
+.fullscreen-viewer img {
+  max-width: 90%;
+  max-height: 85%;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+  cursor: grab;
+}
+
+.close-viewer,
+.zoom-btn,
+.zoom-out-btn {
+  position: fixed;
+  width: 52px;
+  height: 52px;
+  border: none;
+  border-radius: 14px;
+  background: white;
+  color: black;
+  font-size: 28px;
+  font-weight: 900;
+  cursor: pointer;
+  z-index: 2100;
+}
+
+.close-viewer {
+  top: 25px;
+  right: 25px;
+}
+
+.zoom-btn {
+  right: 25px;
+  bottom: 95px;
+}
+
+.zoom-out-btn {
+  right: 25px;
+  bottom: 30px;
+}
