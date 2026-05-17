@@ -160,18 +160,15 @@ function setupCanvas() {
   canvas.style.width = img.clientWidth + "px";
   canvas.style.height = img.clientHeight + "px";
 
-  // РИСОВАНИЕ
-  ctx.lineWidth = 5;
-  ctx.lineCap = "round";
-  ctx.lineJoin = "round";
+ctx.lineWidth = 5;
+ctx.lineCap = "round";
+ctx.lineJoin = "round";
 
-  // КРАСНЫЙ ЦВЕТ
-  ctx.strokeStyle = "#ff0000";
-  ctx.fillStyle = "#ff0000";
+ctx.strokeStyle = "#ff0000";
+ctx.fillStyle = "#ff0000";
 
-  // GLOW
-  ctx.shadowBlur = 12;
-  ctx.shadowColor = "#ff0000";
+ctx.shadowBlur = 0;
+ctx.shadowColor = "transparent";
 
   saveCanvasState();
 }
