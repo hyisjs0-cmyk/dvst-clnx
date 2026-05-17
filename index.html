@@ -42,9 +42,18 @@
       <button id="attackBtn" onclick="setMode('attack')">АТАКА</button>
     </div>
 
-    <div class="imageBox">
-      <img id="mapImage" src="" alt="Картинка карты" onclick="openFullscreen()" />
-    </div>
+    <div class="imageBox" id="tacticalBoard">
+  <img id="mapImage" src="" alt="Картинка карты" onclick="openFullscreen()" />
+
+  <div class="marker" style="left: 25%; top: 35%;">A</div>
+  <div class="marker" style="left: 60%; top: 45%;">B</div>
+  <div class="marker danger" style="left: 72%; top: 28%;">!</div>
+
+  <div class="label" style="left: 18%; top: 55%;">Позиция DEF</div>
+  <div class="label" style="left: 55%; top: 65%;">Заход ATTACK</div>
+
+  <div class="arrow" style="left: 40%; top: 50%; transform: rotate(25deg);"></div>
+</div>
     <div id="fullscreenViewer" class="fullscreen-viewer">
   <button class="close-viewer" onclick="closeFullscreen()">×</button>
   <button class="zoom-btn" onclick="zoomImage()">＋</button>
