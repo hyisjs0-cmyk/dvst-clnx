@@ -236,3 +236,42 @@ h1 {
 .imageBox {
   position: relative;
 }
+.paint-tools {
+  position: fixed;
+  left: 25px;
+  top: 25px;
+  display: flex;
+  gap: 10px;
+  z-index: 2200;
+}
+
+.paint-tools button {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 12px;
+  background: white;
+  color: black;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.canvas-wrap {
+  position: relative;
+  max-width: 90%;
+  max-height: 85%;
+}
+
+.canvas-wrap img {
+  display: block;
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+}
+
+#drawCanvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: crosshair;
+  z-index: 5;
+}
