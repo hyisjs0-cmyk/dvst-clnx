@@ -240,7 +240,6 @@ function draw(e) {
     ctx.restore();
   }
 }
-}
 
 function endDraw(e) {
   if (!isDrawing) return;
