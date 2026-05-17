@@ -91,6 +91,7 @@ function updateButtons() {
   document.getElementById("defBtn").classList.toggle("active-switch", currentMode === "def");
   document.getElementById("attackBtn").classList.toggle("active-switch", currentMode === "attack");
 }
+
 let zoomLevel = 1;
 
 function openFullscreen() {
@@ -109,6 +110,7 @@ function openFullscreen() {
     setupCanvas();
   }, 100);
 }
+
 function closeFullscreen() {
   document.getElementById("fullscreenViewer").classList.remove("active");
 }
@@ -136,6 +138,7 @@ document.addEventListener("keydown", function(event) {
     closeFullscreen();
   }
 });
+
 let drawTool = "pen";
 let isDrawing = false;
 let startX = 0;
@@ -160,9 +163,14 @@ function setupCanvas() {
   canvas.style.width = img.clientWidth + "px";
   canvas.style.height = img.clientHeight + "px";
 
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
   ctx.globalAlpha = 1;
   ctx.globalCompositeOperation = "source-over";
   ctx.imageSmoothingEnabled = false;
+  ctx.shadowBlur = 0;
+  ctx.shadowColor = "transparent";
+  ctx.filter = "none";
 
   saveCanvasState();
 }
@@ -209,11 +217,6 @@ function startDraw(e) {
   ctx.beginPath();
   ctx.moveTo(startX, startY);
 }
-  if (drawTool === "pen") {
-    ctx.beginPath();
-    ctx.moveTo(startX, startY);
-  }
-}
 
 function draw(e) {
   if (!isDrawing) return;
@@ -221,8 +224,6 @@ function draw(e) {
   const pos = getMousePos(e);
 
   if (drawTool === "pen") {
-    ctx.save();
-
     ctx.globalAlpha = 1;
     ctx.globalCompositeOperation = "source-over";
     ctx.shadowBlur = 0;
@@ -236,13 +237,12 @@ function draw(e) {
 
     ctx.lineTo(pos.x, pos.y);
     ctx.stroke();
-
-    ctx.restore();
   }
 }
 
 function endDraw(e) {
   if (!isDrawing) return;
+
   isDrawing = false;
 
   const pos = getMousePos(e);
@@ -255,11 +255,17 @@ function endDraw(e) {
 }
 
 function drawArrow(fromX, fromY, toX, toY) {
-  ctx.strokeStyle = "red";
-  ctx.fillStyle = "red";
-
+  ctx.globalAlpha = 1;
+  ctx.globalCompositeOperation = "source-over";
   ctx.shadowBlur = 0;
+  ctx.shadowColor = "transparent";
   ctx.filter = "none";
+
+  ctx.lineWidth = 4;
+  ctx.lineCap = "round";
+  ctx.lineJoin = "round";
+  ctx.strokeStyle = "#ff0000";
+  ctx.fillStyle = "#ff0000";
 
   const headLength = 18;
   const angle = Math.atan2(toY - fromY, toX - fromX);
