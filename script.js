@@ -160,18 +160,9 @@ function setupCanvas() {
   canvas.style.width = img.clientWidth + "px";
   canvas.style.height = img.clientHeight + "px";
 
-  // ЧИСТОЕ РИСОВАНИЕ БЕЗ БЛЮРА
-  ctx.lineWidth = 4;
-  ctx.lineCap = "round";
-  ctx.lineJoin = "round";
-
-  ctx.strokeStyle = "red";
-  ctx.fillStyle = "red";
-
-  // ПОЛНОСТЬЮ УБИРАЕМ ТЕНИ
-  ctx.shadowBlur = 0;
-  ctx.shadowColor = "transparent";
-  ctx.filter = "none";
+  ctx.globalAlpha = 1;
+  ctx.globalCompositeOperation = "source-over";
+  ctx.imageSmoothingEnabled = false;
 
   saveCanvasState();
 }
@@ -215,6 +206,9 @@ function startDraw(e) {
   startX = pos.x;
   startY = pos.y;
 
+  ctx.beginPath();
+  ctx.moveTo(startX, startY);
+}
   if (drawTool === "pen") {
     ctx.beginPath();
     ctx.moveTo(startX, startY);
@@ -227,9 +221,25 @@ function draw(e) {
   const pos = getMousePos(e);
 
   if (drawTool === "pen") {
+    ctx.save();
+
+    ctx.globalAlpha = 1;
+    ctx.globalCompositeOperation = "source-over";
+    ctx.shadowBlur = 0;
+    ctx.shadowColor = "transparent";
+    ctx.filter = "none";
+
+    ctx.lineWidth = 4;
+    ctx.lineCap = "round";
+    ctx.lineJoin = "round";
+    ctx.strokeStyle = "#ff0000";
+
     ctx.lineTo(pos.x, pos.y);
     ctx.stroke();
+
+    ctx.restore();
   }
+}
 }
 
 function endDraw(e) {
