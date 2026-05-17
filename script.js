@@ -103,8 +103,12 @@ function openFullscreen() {
   fullscreenImage.src = currentImage;
 
   fullscreen.classList.add("active");
-}
 
+  setTimeout(() => {
+    history = [];
+    setupCanvas();
+  }, 100);
+}
 function closeFullscreen() {
   document.getElementById("fullscreenViewer").classList.remove("active");
 }
