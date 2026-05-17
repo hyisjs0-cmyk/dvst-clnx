@@ -163,8 +163,6 @@ function setupCanvas() {
   ctx.lineCap = "round";
   ctx.strokeStyle = "red";
   ctx.fillStyle = "red";
-  ctx.shadowBlur = 10;
-  ctx.shadowColor = "red";
 
   saveCanvasState();
 }
