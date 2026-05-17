@@ -6,7 +6,7 @@ const images = {
   "МИРОР": {
     def: [
       "DEF/мирор.png",
-      "DEF/asasa.png"
+      "images/мирор обычка.jpg"
       ],
     attack: "ATAKA/мирор.png"
   },
