@@ -10,8 +10,8 @@ const images = {
       ],
     attack: [
       "ATAKA/мирор.png",
-       "images/мирор обычка.jpg"
-      ],
+      "images/мирор обычка.jpg"
+      ]
   },
   "ВЕТРЯКИ": {
     def: "DEF/ветряки.png",
