@@ -275,3 +275,32 @@ h1 {
   cursor: crosshair;
   z-index: 5;
 }
+.gallery {
+  max-width: 1150px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.gallery-btn {
+  width: 58px;
+  height: 58px;
+  border: none;
+  border-radius: 50%;
+  background: white;
+  color: black;
+  font-size: 45px;
+  font-weight: 900;
+  cursor: pointer;
+  line-height: 1;
+  transition: 0.25s;
+}
+
+.gallery-btn:hover {
+  transform: scale(1.1);
+}
+
+.imageBox {
+  flex: 1;
+}
