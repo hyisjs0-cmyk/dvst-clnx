@@ -150,6 +150,7 @@ function setTool(tool) {
 
 function setupCanvas() {
   const img = document.getElementById("fullscreenImage");
+
   canvas = document.getElementById("drawCanvas");
   ctx = canvas.getContext("2d");
 
@@ -159,10 +160,18 @@ function setupCanvas() {
   canvas.style.width = img.clientWidth + "px";
   canvas.style.height = img.clientHeight + "px";
 
-  ctx.lineWidth = 4;
+  // РИСОВАНИЕ
+  ctx.lineWidth = 5;
   ctx.lineCap = "round";
-  ctx.strokeStyle = "red";
-  ctx.fillStyle = "red";
+  ctx.lineJoin = "round";
+
+  // КРАСНЫЙ ЦВЕТ
+  ctx.strokeStyle = "#ff0000";
+  ctx.fillStyle = "#ff0000";
+
+  // GLOW
+  ctx.shadowBlur = 12;
+  ctx.shadowColor = "#ff0000";
 
   saveCanvasState();
 }
@@ -237,6 +246,9 @@ function endDraw(e) {
 }
 
 function drawArrow(fromX, fromY, toX, toY) {
+  ctx.strokeStyle = "#ff0000";
+  ctx.fillStyle = "#ff0000";
+
   const headLength = 18;
   const angle = Math.atan2(toY - fromY, toX - fromX);
 
@@ -247,15 +259,18 @@ function drawArrow(fromX, fromY, toX, toY) {
 
   ctx.beginPath();
   ctx.moveTo(toX, toY);
+
   ctx.lineTo(
     toX - headLength * Math.cos(angle - Math.PI / 6),
     toY - headLength * Math.sin(angle - Math.PI / 6)
   );
+
   ctx.lineTo(
     toX - headLength * Math.cos(angle + Math.PI / 6),
     toY - headLength * Math.sin(angle + Math.PI / 6)
   );
-  ctx.lineTo(toX, toY);
+
+  ctx.closePath();
   ctx.fill();
 }
 
