@@ -42,8 +42,14 @@
       <button id="attackBtn" onclick="setMode('attack')">АТАКА</button>
     </div>
 
-   <div class="imageBox">
-  <img id="mapImage" src="" alt="Картинка карты" onclick="openFullscreen()" />
+   <div class="gallery">
+  <button class="gallery-btn left" onclick="prevImage()">‹</button>
+
+  <div class="imageBox">
+    <img id="mapImage" src="" alt="" onclick="openFullscreen()" />
+  </div>
+
+  <button class="gallery-btn right" onclick="nextImage()">›</button>
 </div>
    <div id="fullscreenViewer" class="fullscreen-viewer">
   <div class="paint-tools">
