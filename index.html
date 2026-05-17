@@ -43,8 +43,15 @@
     </div>
 
     <div class="imageBox">
-      <img id="mapImage" src="" alt="Картинка карты" />
+      <img id="mapImage" src="" alt="Картинка карты" onclick="openFullscreen()" />
     </div>
+    <div id="fullscreenViewer" class="fullscreen-viewer">
+  <button class="close-viewer" onclick="closeFullscreen()">×</button>
+  <button class="zoom-btn" onclick="zoomImage()">＋</button>
+  <button class="zoom-out-btn" onclick="zoomOutImage()">－</button>
+
+  <img id="fullscreenImage" src="" alt="Fullscreen image">
+</div>
   </section>
 
   <script src="script.js"></script>
